@@ -54,7 +54,7 @@
         &:hover {
             .heading,
             p {
-                color: $default !important;
+                color: theme-color("default") !important;
             }
         }
     }

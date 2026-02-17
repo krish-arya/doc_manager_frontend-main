@@ -87,7 +87,7 @@
         right: 0;
         top: 600px;
         height: 2000px;
-        background: $secondary;
+        background: theme-color("secondary");
         transform: skew(0,-8deg);
     }
 
