@@ -8,7 +8,6 @@ import {
   DropdownToggle,
   Form,
   FormGroup,
-  InputGroupAddon,
   InputGroupText,
   Input,
   InputGroup,
