@@ -27,6 +27,7 @@ import Select from 'react-select'
 const Upload = () => {
     const [selectedDepartment, setSelectedDepartment] = useState(null);
     const [dropdownDepartmentOptions, setDropdownDepartmentOptions] = useState([]);
+    const [docDateValue, setDocDateValue] = useState('');
     const [maxDate, setMaxDate] = useState('');
     const [isValidFiles, setIsValidFiles] = useState(false)
     const [isoversize, setIsOverSize] = useState(false);
@@ -168,7 +169,6 @@ const Upload = () => {
           
         const files_check = Array.from(e.target.files);  // Convert FileList to an array
         // setSelectedFile(files); 
-        let allFilesValid = true;
         let totalSize = 0;
 
         // Calculate the total size of selected files
@@ -178,7 +178,7 @@ const Upload = () => {
         // Check if total size exceeds the limit
         if (totalSize > maxFileSize) {
             alert('Total file size exceeds the limit of 10MB.');
-            setSelectedFile([]);  // Clear the selected files if the limit is exceeded
+            setFiles([]);  // Clear the selected files if the limit is exceeded
 
             setIsOverSize(true);
             setIsValidFiles(true);

@@ -20,7 +20,10 @@ import {
   Modal, ModalHeader, ModalBody, ModalFooter
 
 } from "reactstrap";
-import Select from 'react-select'
+import Header from "components/Headers/Header.js";
+import axios from "../../api/axios";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
 
 const SearchDocument = () => {
 
