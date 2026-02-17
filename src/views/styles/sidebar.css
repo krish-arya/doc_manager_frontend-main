@@ -1,0 +1,14 @@
+.custom-dropdown .dropdown-item {
+  background-color: transparent !important; /* Prevent white background on hover */
+  transition: background-color 0.2s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important; /* Custom hover background color */
+  color: inherit; /* Maintain text color on hover */
+}
+
+/* Optional: Ensure the dropdown menu itself respects the navbar background */
+.custom-dropdown {
+  background-color: inherit !important; /* Inherit background from navbar_background */
+}
