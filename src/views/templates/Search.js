@@ -20,12 +20,6 @@ import {
   Modal, ModalHeader, ModalBody, ModalFooter
 
 } from "reactstrap";
-// core components
-// import UserHeader from "components/Headers/UserHeader.js";
-import Header from "components/Headers/Header.js";
-import axios from '../../api/axios';
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import Select from 'react-select'
 
 const SearchDocument = () => {
@@ -38,13 +32,6 @@ const SearchDocument = () => {
   const [maxDate, setMaxDate] = useState('');
   const [isloading, setIsLoading] = useState(false)
 
-  // State for pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const resultsPerPage = 10; // Number of results per page
-  // Calculate total pages
-  const [totalPages, setTotalPages] = useState(1);
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
   const [modal, setModal] = useState(false);
@@ -118,7 +105,7 @@ const SearchDocument = () => {
       setIsLoading(false)
       // Set the results from the response
       setResults(response.data);
-      if (response.data.length == 0) {
+      if (response.data.length === 0) {
         setError('No Results found, try a different Search');
       }
     } catch (err) {
@@ -250,7 +237,7 @@ const SearchDocument = () => {
                               <td>{result.department_name}</td>
                               <td>{result.upload_date}</td> {/* Assuming you have an 'uploaded_at' field */}
                               <td>
-                                <a className="btn btn-sm btn-info" href={result.signed_url} download target="_blank">
+                                <a className="btn btn-sm btn-info" href={result.signed_url} download target="_blank" rel="noreferrer">
                                   Download
                                 </a> {/* Assuming you have a 'download_url' field */}
                               </td>

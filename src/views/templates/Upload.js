@@ -12,8 +12,6 @@ import {
     Container,
     Row,
     Col,
-    Table,
-    Fade,
     Spinner,
     ListGroup,
     ListGroupItem,
@@ -25,17 +23,12 @@ import {
 import Header from "components/Headers/Header.js";
 import axios from '../../api/axios';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import Select from 'react-select'
 const Upload = () => {
-    const navigate = useNavigate();
-    const [selectedFile, setSelectedFile] = useState([]);
     const [selectedDepartment, setSelectedDepartment] = useState(null);
     const [dropdownDepartmentOptions, setDropdownDepartmentOptions] = useState([]);
-    const [docDateValue, setDocDateValue] = useState('');
     const [maxDate, setMaxDate] = useState('');
     const [isValidFiles, setIsValidFiles] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('');
     const [isoversize, setIsOverSize] = useState(false);
     const [mergeFileName, setMergeFileName] = useState('')
     const [isloading, setIsLoading] = useState(false)
@@ -205,8 +198,6 @@ const Upload = () => {
 
             // Check if the file type is either image or pdf
             if (!fileType.includes('image') && fileType !== 'application/pdf') {
-                allFilesValid = false; // Set to false if any invalid file type is found
-
                 setIsValidFiles(true)
                 break;
             }
