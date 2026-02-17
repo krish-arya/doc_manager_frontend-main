@@ -1,8 +1,5 @@
 
 
-// reactstrap components
-import { UncontrolledAlert } from "reactstrap";
-
 const Footer = () => {
   
   return (

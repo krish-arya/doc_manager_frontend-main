@@ -12,7 +12,6 @@ import AuthLayout from "layouts/Auth.js";
 import { AuthProvider } from "context/AuthContext";
 import PrivateRoute from "components/PrivateRouter/PrivateRoute";
 import Logout from "views/templates/Logout";
-import Login from "views/templates/Login";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

@@ -1,5 +1,4 @@
-  import React, { useState, useRef, useEffect } from 'react';
-  import ReactDOM from 'react-dom/client';
+  import React, { useState, useRef } from 'react';
   import Header from "components/Headers/Header.js";
   import "../styles/invoices.css"
   import {

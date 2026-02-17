@@ -27,6 +27,7 @@ import Select from 'react-select'
 const Upload = () => {
     const [selectedDepartment, setSelectedDepartment] = useState(null);
     const [dropdownDepartmentOptions, setDropdownDepartmentOptions] = useState([]);
+    // eslint-disable-next-line no-unused-vars
     const [docDateValue, setDocDateValue] = useState('');
     const [maxDate, setMaxDate] = useState('');
     const [isValidFiles, setIsValidFiles] = useState(false)
