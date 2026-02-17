@@ -22,13 +22,13 @@
 @import "argon-dashboard/custom/variables";
 @import "argon-dashboard/custom/mixins";
 
-// bootstrap (4.6.0) components
+// bootstrap (5.3.2) components
 
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/code";  
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
@@ -37,19 +37,19 @@
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/button-group";
 @import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
+// @import "~bootstrap/scss/custom-forms"; // Removed in Bootstrap 5 - integrated into forms
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/jumbotron"; // Removed in Bootstrap 5
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/media"; // Removed in Bootstrap 5
 @import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/close-button"; // Renamed from 'close' in Bootstrap 5
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/popover";
