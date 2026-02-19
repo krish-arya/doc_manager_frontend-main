@@ -1,6 +1,7 @@
 // src/context/AuthContext.js
 import React, { createContext, useState, useContext,useEffect } from 'react';
 import axios from '../api/axios';
+import authAxios from '../api/authAxios';
 
 const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ export const AuthProvider = ({ children }) => {
         const token = localStorage.getItem('token');
         if (token) {
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            authAxios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             // Optionally, fetch user data here if required
             setUser({ username: 'user' });
         }
@@ -20,11 +22,13 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         try {
-            const response = await axios.post('/token/', { username, password });
+            // Use authAxios for login - points to AWS server
+            const response = await authAxios.post('/token/', { username, password });
             
             localStorage.setItem('token', response.data.access);
             localStorage.setItem('refreshToken',response.data.refresh)
             axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
+            authAxios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
             setUser({ username });
         } catch (error) {
             console.error("Login failed", error.response ? error.response.data : error.message);
@@ -34,7 +38,9 @@ export const AuthProvider = ({ children }) => {
     };
     const logout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
         delete axios.defaults.headers.common['Authorization'];
+        delete authAxios.defaults.headers.common['Authorization'];
         setUser(null);
     };
 
