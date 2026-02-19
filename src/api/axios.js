@@ -3,7 +3,7 @@ import axios from 'axios';
 import  { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://164.52.203.8:8081/api';
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://164.52.203.8:8081/api';
 
 const instance = axios.create({
     baseURL: baseURL, // Replace with your actual base URL
