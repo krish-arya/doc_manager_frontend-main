@@ -1,5 +1,6 @@
   import React, { useState, useRef } from 'react';
   import Header from "components/Headers/Header.js";
+  import { getApiBaseUrl } from "api/baseUrl";
   import "../styles/invoices.css"
   import {
     Container,
@@ -15,7 +16,7 @@
     Spinner
   } from 'reactstrap';
 
-  const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://164.52.203.8:8081/api';
+  const API_BASE = getApiBaseUrl();
 
   function InvoiceViewer() {
   
