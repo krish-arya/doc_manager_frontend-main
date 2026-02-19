@@ -15,7 +15,7 @@
     Spinner
   } from 'reactstrap';
 
-  const API_BASE = process.env.REACT_APP_API_BASE_URL || 'https://164.52.203.8:8081/api';
+  const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://164.52.203.8:8081/api';
 
   function InvoiceViewer() {
   
